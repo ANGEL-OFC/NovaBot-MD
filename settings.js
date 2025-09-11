@@ -4,15 +4,15 @@ import { fileURLToPath } from "url"
 
 global.botNumber = ""
 
-global.owner = ["5492916450307"]
+global.owner = ["51982110760"]
 
-global.botname = '🕸 SakuraBot-MD'
-global.namebot = '🥗 Sakura Bot'
-global.bot = 'SakuraBot'
-global.packname = '🐼 𝗦𝗮𝗸𝘂𝗿𝗮𝗕𝗼𝘁-𝗠𝗗'
-global.wm = '🌿 𝙎𝙖𝙠𝙪𝙧𝙖𝘽𝙤𝙩-𝙈𝘿'
-global.author = '🥗 DevAlexJs'
-global.dev = '© Pᴏᴡᴇʀᴇᴅ Bʏ DᴇᴠAʟᴇxJs.'
+global.botname = '🕸 NovaBot-MD'
+global.namebot = '🥗 Nova Bot'
+global.bot = 'NovaBot'
+global.packname = '🐼 Nova𝗕𝗼𝘁-𝗠𝗗'
+global.wm = '🌿 Nova𝘽𝙤𝙩-𝙈𝘿'
+global.author = '🥗 ANGEL-OFC'
+global.dev = '© Pᴏᴡᴇʀᴇᴅ Bʏ ANGEL-OFC.'
 
 global.banner = 'https://stellarwa.xyz/files/1757377941018.jpeg'
 global.icon = 'https://stellarwa.xyz/files/1757378468505.jpeg'
