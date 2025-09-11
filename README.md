@@ -2,7 +2,7 @@
 > **Este proyecto está en constante evolución. Estamos comprometidos en ofrecer a nuestra comunidad un Bot increíble. Te invitamos a instalarlo y para estar al tanto de todas las novedades. [¡Únete a nuestro nuevo canal!](https://stellarw.xyz/channel)**
 
 <p align="center"> 
-<img src="https://stellarwa.xyz/files/1757603651149.jpeg" alt="SakuraBot-MD" style="width: 75%; height: auto; max-width: 100px;">
+<img src="https://qu.ax/XYWjE.jpg" alt="NovaBot-MD" style="width: 75%; height: auto; max-width: 100px;">
 
 <p align="center"> 
 <a href="#"><img title="NovaBot-MD" src="https://img.shields.io/badge/¡Disfruta de un Bot totalmente gratuito, con múltiples funciones y de código abierto! -purple?colorA=%239b33b0&colorB=%231c007b&style=for-the-badge"></a> 
@@ -147,9 +147,9 @@ grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https:/
 ---
 
 ### 🫛 Colaboradores
-<a href="https://github.com/DevAlexJs/SakuraBot-MD/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=DevAlexJs/SakuraBot-MD" /> 
+<a href="https://github.com/ANGEL-OFC/NovaBot-MD/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=ANGEL-OFC/NovaBot-MD" /> 
 </a> 
 
 ### 🌾 Autor Del Proyecto
-[![Alexius](https://github.com/DevAlexJs.png?size=100)](https://github.com/DevAlexJs) 
+[![Alexius](https://github.com/ANGEL-OFC.png?size=100)](https://github.com/ANGEL-OFC) 
