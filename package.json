@@ -1,5 +1,5 @@
 {
-  "name": "SakuraBot-MD",
+  "name": "NovaBot-MD",
   "version": "0.0.9",
   "description": "Super WhatsApp Bot",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevAlexJs/SakuraBot-MD.git"
+    "url": "git+https://github.com/ANGEL-OFC/NovaBot-MD.git"
   },
   "keywords": [
     "whatsapp",
@@ -25,9 +25,9 @@
   "author": "OfcKing",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DevAlexJs/SakuraBot-MD/issues"
+    "url": "https://github.com/ANGEL-OFC/NovaBot-MD/issues"
   },
-  "homepage": "https://github.com/DevAlexJs/SakuraBot-MD#readme",
+  "homepage": "https://github.com/ANGEL-OFC/NovaBot-MD#readme",
   "dependencies": {
     "@whiskeysockets/baileys": "github:gatanina-li/baileys",
     "@bochilteam/scraper": "^4.2.4",
