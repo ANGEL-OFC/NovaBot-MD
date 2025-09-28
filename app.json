@@ -1,0 +1,35 @@
+{
+  "name": "NovaBot-MD",
+  "website": "https://github.com/ANGEL-OFC",
+  "description": "Super Bot WhatsApp",
+  "repository": "https://github.com/ANGEL-OFC/NovaBot-MD",
+  "logo": "https://telegra.ph/file/b46f45b5b69f311db31c7.jpg",
+  "success_url": "https://github.com/ANGEL-OFC/NovaBot-MD",
+  "keywords": [
+    "nodejs",
+    "heroku",
+    "bot",
+    "spanish",
+    "english",
+    "indonesian",
+    "arab",
+    "portuguese",
+    "italian",
+    "french",
+    "whatsapp",
+    "termux",
+    "superbot",
+    "multi-device",
+    "md",
+    "official",
+    "javascript",
+    "gatabot"
+  ],
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {"url": "heroku/nodejs"},
+    {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"},
+    {"url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"},
+    {"url": "https://github.com/bogini/heroku-buildpack-graphicsmagick"}
+  ]
+}
