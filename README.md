@@ -296,16 +296,16 @@ Si tiene éxito, le dará un mensaje como: `SUCCESS: specified value was saved`.
 
 ### Colaboradores implicados
 
-<a href="https://github.com/GataNina-Li/GataBot-MD/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=GataNina-Li/GataBot-MD" /> 
+<a href="https://github.com/ANGEL-OFC/NovaBot-MD/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=ANGEL-OFC/NovaBot-MD" /> 
 </a>
 
 ### Gesto de agradecimiento
 
-[![TheShadowBrokers1](https://github.com/BrunoSobrino.png?size=60)](https://github.com/BrunoSobrino)
+[![ANGEL-OFC1](https://github.com/ANGEL-OFC.png?size=60)](https://github.com/ANGEL-OFC)
 
-### Autora del Proyecto
+### Autor del Proyecto y creador
 
-[![GataNina-Li](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li)
+[![ANGEL-OFC](https://github.com/ANGEL-OFC.png?size=100)](https://github.com/ANGEL-OFC)
 
-[License](https://github.com/GataNina-Li/GataBot-MD/blob/master/LICENS) | [Terms and conditions](https://github.com/GataNina-Li/GataBot-MD/blob/master/terms.md) | [Other projects](https://github.com/GataNina-Li) | [@Evolution-Global-Promotion](https://www.atom.bio/evo)
+[License](https://github.com/ANGEL-OFC/NovaBot-MD/blob/master/LICENS) | [Terms and conditions](https://github.com/ANGEL-OFC/NovaBot-MD/blob/master/terms.md) | [Other projects](https://github.com/ANGEL-OFC) | [@Evolution-Global-Promotion](https://www.atom.bio/evo)
