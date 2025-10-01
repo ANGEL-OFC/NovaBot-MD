@@ -20,9 +20,9 @@
 
 | Tipo de solicitud | Posibles asuntos                                                                                                                                                                |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Bug**           | [![Error](https://img.shields.io/badge/Error-red)](https://github.com/GataNina-Li/GataBot-MD/issues/new?assignees=&labels=Bug)                                                  |
-| **Help**          | [![Ayuda, Duda, Pregunta](https://img.shields.io/badge/Ayuda,_Duda,_Pregunta-blue)](https://github.com/GataNina-Li/GataBot-MD/issues/new?assignees=&labels=Help)                |
-| **Suggestion**    | [![Sugerencia, Mejora, Ideas](https://img.shields.io/badge/Sugerencia,_Mejora,_Ideas-green)](https://github.com/GataNina-Li/GataBot-MD/issues/new?assignees=&labels=Suggestion) |
+| **Bug**           | [![Error](https://img.shields.io/badge/Error-red)](https://github.com/ANGEL-OFC/NovaBot-MD/issues/new?assignees=&labels=Bug)                                                  |
+| **Help**          | [![Ayuda, Duda, Pregunta](https://img.shields.io/badge/Ayuda,_Duda,_Pregunta-blue)](https://github.com/ANGEL-OFC/NovaBot-MD/issues/new?assignees=&labels=Help)                |
+| **Suggestion**    | [![Sugerencia, Mejora, Ideas](https://img.shields.io/badge/Sugerencia,_Mejora,_Ideas-green)](https://github.com/ANGEL-OFC/NovaBot-MD/issues/new?assignees=&labels=Suggestion) |
 
 > **Una vez que envíes tu solicitud, uno de nuestros colaboradores se pondrá en contacto contigo. Si no recibes una respuesta de inmediato, puedes reenviar la información a nuestro correo o a nuestro Chat Privado de Soporte en Telegram.**
 
@@ -32,11 +32,11 @@
   <summary><b>🌺 Recomendaciones</b></summary>
 
  <details>
-  <summary><b>Sobre GataBot</b></summary>
+  <summary><b>Sobre NovaBot</b></summary>
   
 | Tema | Descripción | Atajo |
 |------|-------------|-------|
-| 🔑 **Owners** | *Define quiénes tendrán control total del bot.* | [![Here](https://img.shields.io/badge/Aquí-green)](https://github.com/GataNina-Li/GataBot-MD/blob/c74265fe42d465b52d64209a50b02a5af437b8b2/config.js#L15) |
+| 🔑 **Owners** | *Define quiénes tendrán control total del bot.* | [![Here](https://img.shields.io/badge/Aquí-green)](https://github.com/ANGEL-OFC/NovaBot-MD/blob/c74265fe42d465b52d64209a50b02a5af437b8b2/config.js#L15) |
 | ✏️ **Modificar nombre** | *Modifica el nombre del bot de manera sencilla.* | [![Here](https://img.shields.io/badge/Aquí-green)](https://github.com/GataNina-Li/GataBot-MD/blob/c74265fe42d465b52d64209a50b02a5af437b8b2/config.js#L144) |
 | 📲 **Conectar con código (opcional)** | *Vincula directamente tu número para recibir código de 8 dígitos.* | [![Here](https://img.shields.io/badge/Aquí-green)](https://github.com/GataNina-Li/GataBot-MD/blob/c74265fe42d465b52d64209a50b02a5af437b8b2/config.js#L44) |
 | 🆙 **Nivel de usuarios** | *Ajusta la dificultad para que los usuarios suban de nivel en el bot.* | [![Here](https://img.shields.io/badge/Aquí-green)](https://github.com/GataNina-Li/GataBot-MD/blob/c74265fe42d465b52d64209a50b02a5af437b8b2/config.js#L220) |
@@ -62,7 +62,7 @@
 termux-setup-storage
 ```
 ```bash
-apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/GataNina-Li/GataBot-MD/master/gata.sh | bash
+apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/ANGEL-OFC/NovaBot-MD/master/nova.sh | bash
 ```
 ### Edita lo siguiente si deseas usar este método de instalación en tú repositorio previamente hecho un fork
 ```js
@@ -70,24 +70,24 @@ apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - 
 
 // Parámetros editables
 // Reemplaza [usuario] con tu nombre de usuario de GitHub y [repositorio] con el nombre de tu repositorio
-"wget -O - https://raw.githubusercontent.com/[usuario]/[repositorio]/master/gata.sh | bash"
+"wget -O - https://raw.githubusercontent.com/[usuario]/[repositorio]/master/nova.sh | bash"
 
 // Ejemplo
-"wget -O - https://raw.githubusercontent.com/GataNina-Li/GataBot-MD/master/gata.sh | bash"
+"wget -O - https://raw.githubusercontent.com/ANGEL-OFC/NovaBot-MD/master/nova.sh | bash"
 
 ````
-#### MODIFICAR ARCHIVO [`gata.sh`](https://github.com/GataNina-Li/GataBot-MD/blob/master/gata.sh)
+#### MODIFICAR ARCHIVO [`nova.sh`](https://github.com/ANGEL-OFC/NovaBot-MD/blob/master/nova.sh)
 ```js
 // Líneas a modificar:
 
 // Línea 205:
 // Reemplaza [usuario] con tu nombre de usuario en GitHub y [repositorio] con el nombre de tu repositorio
-// Ejemplo: git clone https://github.com/GataNina-Li/GataBot-MD.git
+// Ejemplo: git clone https://github.com/ANGEL-OFC/NovaBot-MD.git
 "git clone https://github.com/[usuario]/[repositorio].git"
 
 // Línea 209:
 // Reemplaza [repositorio] con el nombre de tu repositorio
-// Ejemplo: cd GataBot-MD
+// Ejemplo: cd NovaBot-MD
 "cd [repositorio]"
 
 // Una vez hecho estos cambios, ejecuta el enlace personalizado de Instalación Automática en Termux
@@ -108,7 +108,7 @@ termux-setup-storage
 apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 ```bash
-git clone https://github.com/GataNina-Li/GataBot-MD && cd GataBot-MD
+git clone https://github.com/ANGEL-OFC/NovaBot-MD && cd NovaBot-MD
 ```
 ```bash
 yarn install && npm install
@@ -124,11 +124,11 @@ npm start
  
 > *Descarga y Descomprime*
 
-<a href="https://github.com/GataNina-Li/GataBot-MD/archive/refs/heads/master.zip">
-  <img src="https://img.shields.io/badge/GitHub-GataBot_Download_Zip-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub-GataBot_Download" />
+<a href="https://github.com/ANGEL-OFC/NovaBot-MD/archive/refs/heads/master.zip">
+  <img src="https://img.shields.io/badge/GitHub-NovaBot_Download_Zip-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub-NovaBot_Download" />
 </a>
 
-[![blog](https://img.shields.io/badge/Termux-GataBot-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
+[![blog](https://img.shields.io/badge/Termux-NovaBot-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
 ](https://youtu.be/UcWlyQ8u5HE)
 
 ```bash
@@ -140,7 +140,7 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-cd storage/downloads/GataBot-MD-master/GataBot-MD-master
+cd storage/downloads/NovaBot-MD-master/NovaBot-MD-master
 ```
 
 ```bash
@@ -157,13 +157,13 @@ npm start
 
 - #### Aplicación para [`Descomprimir`](https://play.google.com/store/apps/details?id=com.rarlab.rar)
 - #### Aplicación para editar [`Archivos`](https://play.google.com/store/apps/details?id=com.rhmsoft.code)
-  > _Guardar los archivos en la ubicación: `storage/downloads/GataBot-MD-master/GataBot-MD-master`_
+  > _Guardar los archivos en la ubicación: `storage/downloads/NovaBot-MD-master/NovaBot-MD-master`_
   </details>
 
 <details>
   <summary><b>Comandos para mantener más tiempo activo el Bot</b></summary>
  
-> *Ejecutar estos comandos dentro de la carpeta GataBot-MD*
+> *Ejecutar estos comandos dentro de la carpeta NovaBot-MD*
 ```bash
 termux-wake-lock && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs 
 ``` 
@@ -188,34 +188,34 @@ pm2 start index
 ### En caso de detenerse
 > _Si despues que ya instalastes tu bot y termux te salta en blanco, se fue tu internet o reiniciaste tu celular, solo realizaras estos pasos:_
 ```bash
-cd && cd GataBot-MD && npm start
+cd && cd NovaBot-MD && npm start
 ```
 ----
 ### Obtener nuevo código QR 
-> *Detén el bot, haz click en el símbolo (ctrl) [default=z] usar la letra "z" + "ENTER" hasta que salga algo verdes similar a: `GataBot-MD $`*
+> *Detén el bot, haz click en el símbolo (ctrl) [default=z] usar la letra "z" + "ENTER" hasta que salga algo verdes similar a: `NovaBot-MD $`*
 > **Escribe los siguientes comando uno x uno :**
 ```bash 
-cd && cd GataBot-MD && rm -rf GataBotSession && npm run qr
+cd && cd NovaBot-MD && rm -rf NovaBotSession && npm run qr
 ```
 ----
 ### Obtener nuevo código de teléfono 
 ```bash 
-cd && cd GataBot-MD && rm -rf GataBotSession && npm run code
+cd && cd NovaBot-MD && rm -rf NovaBotSession && npm run code
 ```
 </details>
 
 <details>
-<summary><b>Actualizar GataBot</b></summary>
+<summary><b>Actualizar NovaBot</b></summary>
   
-> **Utiliza esta opción únicamente si deseas actualizar a la última versión de GataBot. Hemos implementado un método ingenioso mediante comandos para realizar la actualización, pero ten en cuenta que al usarla se eliminarán todos los archivos de la versión actual y se reemplazarán con los de la nueva versión. Solo se conservará la base de datos, por lo que será necesario volver a vincular el Bot.**
+> **Utiliza esta opción únicamente si deseas actualizar a la última versión de NovaBot. Hemos implementado un método ingenioso mediante comandos para realizar la actualización, pero ten en cuenta que al usarla se eliminarán todos los archivos de la versión actual y se reemplazarán con los de la nueva versión. Solo se conservará la base de datos, por lo que será necesario volver a vincular el Bot.**
 
-**Comandos para actualizar GataBot-MD de forma automática**
+**Comandos para actualizar NovaBot-MD de forma automática**
 
 ```bash
-grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/GataNina-Li/GataBot-MD/master/update.sh | bash
+grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/ANGEL-OFC/NovaBot-MD/master/update.sh | bash
 ```
 
-#### Para que no pierda su progreso en GataBot, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
+#### Para que no pierda su progreso en NovaBot, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
 
 > _Estos comandos solo funcionan para TERMUX, REPLIT, LINUX_
 
@@ -289,7 +289,7 @@ Si tiene éxito, le dará un mensaje como: `SUCCESS: specified value was saved`.
 ----
 ### 🙀 Noticias del momento 
 > **En este espacio se publicará comunicados espontáneos, por lo que recuerda visitar frecuentemente el repositorio para estar al tanto del proyecto.**
-#### El Multi lenguaje GataBot llegará a su fin...
+#### El Multi lenguaje NovaBot llegará a su fin...
 > [!IMPORTANT]
 > **La opción para editar el idioma será descontinuada en una futura versión. Esto significa que, a partir de esa actualización, el soporte para múltiples idiomas será eliminado y solo estará disponible en español. Sin embargo, si en el futuro encontramos una forma eficiente de equilibrar la facilidad para la comunidad de editar el bot y mantener un buen rendimiento, esta decisión podría reconsiderarse. Cualquier novedad al respecto será anunciada a través de nuestras redes oficiales. [Más información.](https://whatsapp.com/channel/0029VatPwXw7Noa8n1Vinx3g)**
 ----
