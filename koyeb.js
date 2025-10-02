@@ -7,9 +7,9 @@ sudo dnf clean all -y
 
 RUN git clone https://github.com/ANGEL-OFC/NovaBot-MD
 
-WORKDIR /root/GataBot-MD
+WORKDIR /root/NovaBot-MD
 
-COPY ./root/GataBot-MD
+COPY ./root/NovaBot-MD
 
 RUN yarn install
 
