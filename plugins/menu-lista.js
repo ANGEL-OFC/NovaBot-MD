@@ -125,14 +125,14 @@ let menu = `⎔ \`\`\`${horarioFecha}\`\`\`
 ┃ඬ⃟ ⚡ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 ┃ඬ⃟ ⚡ *Experiencia ➟* ${exp} ⚡
 ┃ඬ⃟ ⚡ *Diamantes ➟* ${limit} 💎
-┃ඬ⃟ ⚡ *BrolyCoins ➟* ${money} 🪙
+┃ඬ⃟ ⚡ *NovaCoins ➟* ${money} 🪙
 ┃ඬ⃟ ⚡ *Tokens ➟* ${joincount} 🀄
 ┃ඬ⃟ ⚡❖ ── ✦ ──『✙』── ✦ ── ❖
 *╚═══❖•ೋ°          °ೋ•❖═══╝*`.trim()
 
 const buttonParamsJson = JSON.stringify({
 title: 'VER LISTA',
-description: 'Infórmate por medios oficiales sobre GataBot',
+description: 'Infórmate por medios oficiales sobre NovaBot',
 sections: [
 {
 title: 'ℹ️ Información',
@@ -142,13 +142,13 @@ rows: [
 header: '✅ Redes',
 title: '🔓 Para: Todos',
 description: 'Infórmate por medios oficiales sobre GataBot',
-id: usedPrefix + 'cuentasgb'
+id: usedPrefix + 'cuentasvb'
 },
 {header: '📢 Grupos/Canales', title: '🔓 Para: Todos', description: '¡Te esperamos!', id: usedPrefix + 'grupos'},
 {
 header: '🎁 Donar',
 title: '🔓 Para: Todos',
-description: 'GataBot se mantiene funcionando gracias a donaciones ¡tú también puedes sumarte apoyando el proyecto!',
+description: 'NovaBot se mantiene funcionando gracias a donaciones ¡tú también puedes sumarte apoyando el proyecto!',
 id: usedPrefix + 'donar'
 }
 ]
