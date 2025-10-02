@@ -51,8 +51,8 @@ phrases=(
 "Auto Push "
 "Commit automático"
 "Zam: update"
-"GataBot-MD"
-"GataDios"
+"NovaBot-MD"
+"ANGEL-OFC"
 )
 
 log() {
