@@ -167,31 +167,35 @@ return unsanitized
 }
 
 global.db.readData = async function (category, id) {
-const sanitizedId = sanitizeId(id)
-if (!global.db.data[category][sanitizedId]) {
-const data = await new Promise((resolve, reject) => {
-collections[category].findOne({_id: sanitizedId}, (err, doc) => {
-if (err) return reject(err)
-resolve(doc ? unsanitizeObject(doc.data) : {})
-})
-})
-global.db.data[category][sanitizedId] = data
-}
-return global.db.data[category][sanitizedId]
+  const memKey = id
+  const diskKey = sanitizeId(id)
+  if (!global.db.data[category][memKey]) {
+    const data = await new Promise((resolve, reject) => {
+      collections[category].findOne({ _id: diskKey }, (err, doc) => {
+        if (err) return reject(err)
+        resolve(doc ? unsanitizeObject(doc.data) : {})
+      })
+    })
+    global.db.data[category][memKey] = data
+  }
+  return global.db.data[category][memKey]
 }
 
 global.db.writeData = async function (category, id, data) {
-const sanitizedId = sanitizeId(id)
-global.db.data[category][sanitizedId] = {
-...global.db.data[category][sanitizedId],
-...sanitizeObject(data)
-}
-await new Promise((resolve, reject) => {
-collections[category].update({_id: sanitizedId}, {$set: {data: sanitizeObject(global.db.data[category][sanitizedId])}}, {upsert: true}, (err) => {
-if (err) return reject(err)
-resolve()
-})
-})
+  const memKey = id
+  const diskKey = sanitizeId(id)
+  global.db.data[category][memKey] = {
+    ...global.db.data[category][memKey],
+    ...data // en memoria sin sanitizar
+  }
+  await new Promise((resolve, reject) => {
+    collections[category].update(
+      { _id: diskKey },
+      { $set: { data: sanitizeObject(global.db.data[category][memKey]) } },
+      { upsert: true },
+      (err) => (err ? reject(err) : resolve())
+    )
+  })
 }
 
 global.db.loadDatabase = async function () {
@@ -262,8 +266,8 @@ process.on('SIGINT', gracefulShutdown)
 process.on('SIGTERM', gracefulShutdown)
 
 global.creds = 'creds.json'
-global.authFile = 'NovaBotSession'
-global.authFileJB = 'NovaJadiBot'
+global.authFile = 'GataBotSession'
+global.authFileJB = 'GataJadiBot'
 global.rutaBot = join(__dirname, global.authFile)
 global.rutaJadiBot = join(__dirname, global.authFileJB)
 const respaldoDir = join(__dirname, 'BackupSession')
@@ -453,7 +457,7 @@ if (isNewLogin) conn.isInit = true
 if (connection === 'close' && !existsSync(`./${global.authFile}/creds.json`)) {
 if (!printingNoConn) {
 printingNoConn = true
-await logCritical(chalk.bold.redBright('⚠️ SIN CONEXIÓN, BORRE LA CARPETA NovaBotSession Y ESCANEA EL CÓDIGO QR ⚠️'))
+await logCritical(chalk.bold.redBright('⚠️ SIN CONEXIÓN, BORRE LA CARPETA GataBotSession Y ESCANEA EL CÓDIGO QR ⚠️'))
 setTimeout(() => {
 printingNoConn = false
 }, 1500)
@@ -569,7 +573,7 @@ isInit = false
 return true
 }
 
-if (global.novaJadibts) {
+if (global.gataJadibts) {
 const readRutaJadiBot = fs.readdirSync(global.rutaJadiBot)
 if (readRutaJadiBot.length > 0) {
 const creds = 'creds.json'
@@ -578,8 +582,8 @@ const botPath = path.join(global.rutaJadiBot, gjbts)
 if (fs.lstatSync(botPath).isDirectory()) {
 const readBotPath = fs.readdirSync(botPath)
 if (readBotPath.includes(creds)) {
-novaJadiBot({
-pathNovaJadiBot: botPath,
+gataJadiBot({
+pathGataJadiBot: botPath,
 m: null,
 conn,
 args: '',
@@ -602,227 +606,4 @@ const file = global.__filename(join(pluginFolder, filename))
 const module = await import(file)
 global.plugins[filename] = module.default || module
 } catch (e) {
-conn.logger.error(e)
-delete global.plugins[filename]
-}
-}
-}
-filesInit()
-.then((_) => Object.keys(global.plugins))
-.catch(console.error)
-
-global.reload = async (_ev, filename) => {
-if (pluginFilter(filename)) {
-const dir = global.__filename(join(pluginFolder, filename), true)
-if (filename in global.plugins) {
-if (existsSync(dir)) conn.logger.info(` SE ACTULIZADO - '${filename}' CON ÉXITO`)
-else {
-conn.logger.warn(`SE ELIMINO UN ARCHIVO : '${filename}'`)
-return delete global.plugins[filename]
-}
-} else conn.logger.info(`SE DETECTO UN NUEVO PLUGINS : '${filename}'`)
-const err = syntaxerror(readFileSync(dir), filename, {
-sourceType: 'module',
-allowAwaitOutsideFunction: true
-})
-if (err) conn.logger.error(`SE DETECTO UN ERROR DE SINTAXIS | SYNTAX ERROR WHILE LOADING '${filename}'\n${format(err)}`)
-else {
-try {
-const module = await import(`${global.__filename(dir)}?update=${Date.now()}`)
-global.plugins[filename] = module.default || module
-} catch (e) {
-conn.logger.error(`HAY UN ERROR REQUIERE EL PLUGINS '${filename}\n${format(e)}'`)
-} finally {
-global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)))
-}
-}
-}
-}
-Object.freeze(global.reload)
-watch(pluginFolder, global.reload)
-await global.reloadHandler()
-
-async function _quickTest() {
-const procs = [
-spawn('ffmpeg'),
-spawn('ffprobe'),
-spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-filter_complex', 'color', '-frames:v', '1', '-f', 'webp', '-']),
-spawn('convert'),
-spawn('magick'),
-spawn('gm'),
-spawn('find', ['--version'])
-]
-
-const test = await Promise.all(
-procs.map((p) =>
-Promise.race([
-new Promise((resolve) => {
-p.on('close', (code) => {
-resolve(code !== 127)
-})
-}),
-new Promise((resolve) => {
-p.on('error', () => {
-resolve(false)
-})
-})
-])
-)
-)
-
-const [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test
-const s = (global.support = {
-ffmpeg,
-ffprobe,
-ffmpegWebp,
-convert,
-magick,
-gm,
-find
-})
-Object.freeze(global.support)
-}
-
-function clearTmp() {
-const tmpDir = join(__dirname, 'tmp')
-if (!existsSync(tmpDir)) return
-const filenames = readdirSync(tmpDir)
-filenames.forEach((file) => {
-const filePath = join(tmpDir, file)
-try {
-unlinkSync(filePath)
-} catch {}
-})
-}
-
-async function purgeSession() {
-const sessionDir = './NovaBotSession'
-try {
-if (!existsSync(sessionDir)) return
-const files = await readdir(sessionDir)
-const preKeys = files.filter((file) => file.startsWith('pre-key-'))
-const now = Date.now()
-const oneHourAgo = now - 24 * 60 * 60 * 1000
-for (const file of preKeys) {
-const filePath = join(sessionDir, file)
-const fileStats = await stat(filePath)
-if (fileStats.mtimeMs < oneHourAgo) {
-try {
-await unlink(filePath)
-console.log(chalk.green(`[🗑️] Pre-key antigua eliminada: ${file}`))
-} catch {}
-} else {
-console.log(chalk.yellow(`[ℹ️] Manteniendo pre-key activa: ${file}`))
-}
-}
-console.log(chalk.cyanBright(`[🔵] Sesiones no esenciales eliminadas de ${global.authFile}`))
-} catch {}
-}
-
-async function purgeSessionSB() {
-const jadibtsDir = './NovaJadiBot/'
-try {
-if (!existsSync(jadibtsDir)) return
-const directories = await readdir(jadibtsDir)
-let SBprekey = []
-const now = Date.now()
-const oneDayAgo = now - 24 * 60 * 60 * 1000
-for (const dir of directories) {
-const dirPath = join(jadibtsDir, dir)
-const statsDir = await stat(dirPath)
-if (statsDir.isDirectory()) {
-const files = await readdir(dirPath)
-const preKeys = files.filter((file) => file.startsWith('pre-key-') && file !== 'creds.json')
-SBprekey = [...SBprekey, ...preKeys]
-for (const file of preKeys) {
-const filePath = join(dirPath, file)
-const fileStats = await stat(filePath)
-if (fileStats.mtimeMs < oneDayAgo) {
-try {
-await unlink(filePath)
-console.log(chalk.bold.green(`${lenguajeGB.smspurgeOldFiles1()} ${file} ${lenguajeGB.smspurgeOldFiles2()}`))
-} catch {}
-}
-}
-}
-}
-if (SBprekey.length === 0) console.log(chalk.bold.green(lenguajeGB.smspurgeSessionSB1()))
-else console.log(chalk.cyanBright(`[🔵] Pre-keys antiguas eliminadas de sub-bots: ${SBprekey.length}`))
-} catch (err) {
-console.log(chalk.bold.red(lenguajeGB.smspurgeSessionSB3() + err))
-}
-}
-
-async function purgeOldFiles() {
-const directories = ['./NovaBotSession/', './NovaJadiBot/']
-for (const dir of directories) {
-try {
-if (!fs.existsSync(dir)) {
-console.log(chalk.yellow(`[⚠] Carpeta no existe: ${dir}`))
-continue
-}
-const files = await fsPromises.readdir(dir)
-for (const file of files) {
-if (file !== 'creds.json') {
-const filePath = join(dir, file)
-try {
-await fsPromises.unlink(filePath)
-} catch {}
-}
-}
-} catch {}
-}
-}
-
-setInterval(
-async () => {
-if (global.stopped === 'close' || !conn || !conn.user) return
-await clearTmp()
-console.log(chalk.bold.cyanBright(lenguajeGB.smsClearTmp()))
-},
-1000 * 60 * 3
-)
-
-setInterval(
-async () => {
-if (global.stopped === 'close' || !conn || !conn.user) return
-await purgeSessionSB()
-await purgeSession()
-console.log(chalk.bold.cyanBright(lenguajeGB.smspurgeSession()))
-await purgeOldFiles()
-console.log(chalk.bold.cyanBright(lenguajeGB.smspurgeOldFiles()))
-},
-1000 * 60 * 10
-)
-
-_quickTest()
-.then(() => conn.logger.info(chalk.bold(lenguajeGB['smsCargando']().trim())))
-.catch(console.error)
-
-let file = fileURLToPath(import.meta.url)
-watchFile(file, () => {
-unwatchFile(file)
-console.log(chalk.bold.greenBright(lenguajeGB['smsMainBot']().trim()))
-import(`${file}?update=${Date.now()}`)
-})
-
-async function isValidPhoneNumber(number) {
-try {
-number = number.replace(/\s+/g, '')
-if (number.startsWith('+521')) {
-number = number.replace('+521', '+52')
-} else if (number.startsWith('+52') && number[4] === '1') {
-number = number.replace('+52 1', '+52')
-}
-const parsedNumber = phoneUtil.parseAndKeepRawInput(number)
-return phoneUtil.isValidNumber(parsedNumber)
-} catch (error) {
-return false
-}
-}
-
-async function joinChannels(conn) {
-for (const channelId of Object.values(global.ch)) {
-await conn.newsletterFollow(channelId).catch(() => {})
-}
-}
+conn.logger.erro
