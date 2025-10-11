@@ -789,17 +789,17 @@ ${generateCommand(commandsConfig, usedPrefix).replace(/≡/g, '𖡡')}
 ┃☭│ ➤ _${usedPrefix}añadirkatacoins *@tag cantidad*_
 ◟ ══════════⊷❍
 `.trim()
-await conn.sendFile(m.chat, novaVidMenu, 'nova.mp4', menu, fkontak, false, {
-contextInfo: {
-externalAdReply: {
-mediaUrl: null,
-mediaType: 1,
-description: null,
-title: gt,
-body: ' 💫 𝗦𝘂𝗽𝗲𝗿 𝗡𝗼𝘃𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ',
-previewType: 0,
-thumbnail: imagen4,
-sourceUrl: redesMenu
+await conn.sendFile(m.chat, 'https://qu.ax/XYWjE.jpg', 'nova.jpg', menu, fkontak, false, {
+    contextInfo: {
+        externalAdReply: {
+            mediaUrl: null,
+            mediaType: 1,
+            description: null,
+            title: gt,
+            body: '💫 𝗦𝘂𝗽𝗲𝗿 𝗡𝗼𝘃𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽',
+            previewType: 0,
+            thumbnail: imagen4,
+            sourceUrl: redesMenu
 }
 }
 })
