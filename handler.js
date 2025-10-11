@@ -1399,14 +1399,14 @@ if (!isPrems && plugin.money && global.db.data.users[m.sender].money < plugin.mo
 this.sendMessage(
 m.chat,
 {
-text: '💥 𝙉𝙊 𝙏𝙄𝙀𝙉𝙀 𝗡𝗢𝗩𝗔𝘾𝙊𝙄𝙉𝙎',
+text: '🐈 𝙉𝙊 𝙏𝙄𝙀𝙉𝙀 𝙂𝘼𝙏𝘼𝘾𝙊𝙄𝙉𝙎',
 contextInfo: {
 externalAdReply: {
 mediaUrl: null,
 mediaType: 1,
 description: null,
 title: gt,
-body: ' 💥 𝗦𝘂𝗽𝗲𝗿 𝗡𝗼𝘃𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ',
+body: ' 😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ',
 previewType: 0,
 thumbnail: gataImg,
 sourceUrl: accountsgb
@@ -1430,7 +1430,7 @@ mediaUrl: null,
 mediaType: 1,
 description: null,
 title: gt,
-body: ' 💥 𝗦𝘂𝗽𝗲𝗿 𝗡𝗼𝘃𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ',
+body: ' 😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ',
 previewType: 0,
 thumbnail: gataImg,
 sourceUrl: accountsgb
@@ -1452,7 +1452,7 @@ mediaUrl: null,
 mediaType: 1,
 description: null,
 title: gt,
-body: ' 💥 𝗦𝘂𝗽𝗲𝗿 𝗡𝗼𝘃𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ',
+body: ' 😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ',
 previewType: 0,
 thumbnail: gataImg,
 sourceUrl: accountsgb
@@ -1800,7 +1800,7 @@ text = (
 action === 'add'
 ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!')
 .replace('@subject', await this.getName(id))
-.replace('@desc', groupMetadata.desc?.toString() || '💥 𝗦𝘂𝗽𝗲𝗿 𝗡𝗼𝘃𝗮𝗕𝗼𝘁-𝗠𝗗 😻')
+.replace('@desc', groupMetadata.desc?.toString() || '😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 😻')
 : chat.sBye || this.bye || conn.bye || 'Bye, @user!'
 ).replace('@user', '@' + user.split('@')[0])
 
@@ -1851,7 +1851,7 @@ externalAdReply: {
 showAdAttribution: true,
 renderLargerThumbnail: true,
 thumbnail: apii.data,
-title: [wm, '💥 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(),
+title: [wm, '😻 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(),
 containsAutoReply: true,
 mediaType: 1,
 sourceUrl: 'https://github.com/GataNina-Li/GataBot-MD'
@@ -1970,7 +1970,7 @@ text: msg,
 contextInfo: {
 externalAdReply: {
 title: lenguajeGB.smsAvisoAG().slice(0, -2),
-body: [wm, '💥 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(),
+body: [wm, '😻 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(),
 thumbnail: gataImg,
 sourceUrl: accountsgb
 }
