@@ -75,7 +75,7 @@ let username = conn.getName(who)
 let user = global.db.data.users[m.sender]
 //user.registered = false
 
-let pp = gataVidMenu
+let pp = novaVidMenu
 let fsizedoc = '1'.repeat(10)
 let adReply = {
 fileLength: fsizedoc,
