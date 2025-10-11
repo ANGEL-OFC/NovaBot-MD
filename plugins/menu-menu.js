@@ -789,7 +789,7 @@ ${generateCommand(commandsConfig, usedPrefix).replace(/≡/g, '𖡡')}
 ┃☭│ ➤ _${usedPrefix}añadirkatacoins *@tag cantidad*_
 ◟ ══════════⊷❍
 `.trim()
-await conn.sendFile(m.chat, novaVidMenu, 'https://qu.ax/XYWjE.jpg', menu, fkontak, false, {
+await conn.sendFile(m.chat, novaVidMenu, '', menu, fkontak, false, {
 contextInfo: {
 externalAdReply: {
 mediaUrl: null,
@@ -803,7 +803,7 @@ sourceUrl: redesMenu
 }
 }
 })
-//await conn.sendFile(m.chat, gataVidMenu, 'gata.mp4', menu, fkontak)
+//await conn.sendFile(m.chat, novaaVidMenu, 'nova.mp4', menu, fkontak)
 } catch (e) {
 await m.reply(
 lenguajeGB['smsMalError3']() +
