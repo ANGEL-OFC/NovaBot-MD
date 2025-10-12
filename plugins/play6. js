@@ -6,6 +6,15 @@ const { pipeline } = require('stream');
 const { promisify } = require('util');
 const ffmpeg = require('fluent-ffmpeg');
 const streamPipeline = promisify(pipeline);
+//import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
+import fetch from 'node-fetch'
+import yts from 'yt-search'
+import ytdl from 'ytdl-core'
+import axios from 'axios'
+import { ogmp3 } from '../lib/youtubedl.js'
+const LimitAud = 725 * 1024 * 1024 // 725MB
+const LimitVid = 425 * 1024 * 1024 // 425MB
+let tempStorage = {}
 
 const handler = async (msg, { conn, text }) => {
     const formatVideo = ['240', '360', '480', '720'];
