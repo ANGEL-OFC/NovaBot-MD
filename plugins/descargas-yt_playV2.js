@@ -75,6 +75,16 @@ sourceUrl: accountsgb
 }
 }
 })
+
+            const config = {
+                method: 'GET',
+                url: `https://p.oceansaver.in/ajax/download.php?format=${format}&url=${encodeURIComponent(url)}&api=dfcb6d76f2f6a9894gjkege8a4ab232222`,
+                headers: {
+                    'User-Agent': 'Mozilla/5.0'
+                }
+            };
+
+
 try {
 const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${yt_play[0].url}`)
 let {data} = await res.json()
